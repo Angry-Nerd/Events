@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".Events"
+    android:background="#ffffff"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:layout_marginTop="56dp">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Events"
+            android:background="@drawable/gradient"
+            android:padding="20dp"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:elevation="20dp"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_semester_contents"
+            android:elevation="20dp"
+            />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/gradient"
+            app:titleTextColor="#fff"
+            android:theme="@style/AppTheme"
+            app:title="CGC Radio"
+            app:titleMarginStart="15dp"
+            >
+            <Button
+                android:id="@+id/add"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:textColor="#ffffff"
+                android:padding="5px"
+                android:background="@android:color/transparent"
+                android:layout_gravity="right"
+                />
+        </android.support.v7.widget.Toolbar>
+    </FrameLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/header"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="#fff"
+        app:itemTextColor="#000"
+        app:menu="@menu/student_menu"
+        />
+</android.support.v4.widget.DrawerLayout>
