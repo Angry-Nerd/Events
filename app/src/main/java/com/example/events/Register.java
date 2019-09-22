@@ -11,16 +11,16 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        String link = getIntent().getStringExtra("link");
-        WebView webView = findViewById(R.id.webview);
-        webView.setWebViewClient(new MyBrowser());
-        webView.loadUrl(link);
-    }
-    private class MyBrowser extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
+            String link = getIntent().getStringExtra("link");
+            WebView webView = findViewById(R.id.webview);
+            webView.setWebViewClient(new MyBrowser());
+            webView.loadUrl(link);
         }
-    }
+        private class MyBrowser extends WebViewClient {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+        }
 }
